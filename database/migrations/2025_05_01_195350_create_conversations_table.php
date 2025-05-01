@@ -1,10 +1,11 @@
+// Create a file named database/migrations/2025_05_01_000002_create_conversations_table.php
 <?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateConversationsTable extends Migration
+return new class extends Migration
 {
     public function up()
     {
@@ -21,4 +22,4 @@ class CreateConversationsTable extends Migration
     {
         Schema::dropIfExists('conversations');
     }
-}
+};
