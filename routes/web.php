@@ -9,7 +9,9 @@ Route::get('/', function () {
 });
 
 // Chatbot routes
-Route::get('/chatbot', [ChatbotController::class, 'index'])->name('chatbot.index');
-Route::post('/chatbot/message', [ChatbotController::class, 'processMessage'])->name('chatbot.message');
-Route::post('/chatbot/language', [ChatbotController::class, 'switchLanguage'])->name('chatbot.language');
-Route::get('/chatbot/phrases', [ChatbotController::class, 'getPhrases'])->name('chatbot.phrases');
+Route::controller(ChatbotController::class)->group(function () {
+    Route::get('/chatbot', 'index')->name('chatbot.index');
+    Route::post('/chatbot/message', 'processMessage')->name('chatbot.message');
+    Route::post('/chatbot/language', 'switchLanguage')->name('chatbot.language');
+    Route::get('/chatbot/phrases', 'getPhrases')->name('chatbot.phrases');
+});

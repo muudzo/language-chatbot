@@ -15,4 +15,9 @@ class Phrase extends Model
         'language',
         'context',
     ];
+
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
 }

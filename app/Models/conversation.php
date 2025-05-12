@@ -14,4 +14,9 @@ class Conversation extends Model
         'bot_response',
         'language',
     ];
+
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
 }
